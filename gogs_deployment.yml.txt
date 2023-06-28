@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: gogs
+  name: gogs
+  namespace: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gogs
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: gogs
+    spec:
+      containers:
+      - image: docker.io/gogs/gogs
+        name: gogs
+        resources: {}
+status: {}

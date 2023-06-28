@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: postgres
+  name: postgres
+  namespace: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - image: docker.io/postgres
+        name: postgres
+        env: 
+        - name: POSTGRES_USER
+          value: dinesh
+        - name: POSTGRES_PASSWORD
+          value: alexa
+        - name: POSTGRES_DB
+          value: unnati
+        resources: {}
+status: {}
